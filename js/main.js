@@ -1,3 +1,6 @@
+
+(function(){
+
 var api ={
   url: 'http://examen-laboratoria-sprint-5.herokuapp.com/topics/'
 };
@@ -8,6 +11,9 @@ var cargarPagina = function () {
   cargarTemas(); // llamamos a la funcion
   $("#formulario").submit(agregarTema);
   //$(document).on('click', '#formulario' agregarTema)
+  filtrarTemas();
+
+
 }
 
 var cargarTemas = function (){
@@ -51,10 +57,19 @@ var agregarTema = function (e) {
   });
 };
 
-
 var modal= function(){
   $("#myModal").modal("hide");
 }
-
-
+/*
+var filtrarTemas= function(){
+  //e.preventDefault();
+  var busqueda= $("#busquedaTemas").val().toLowerCase();
+  var temasFiltrados= contenedorTemas.filter(function(temaSeleccionado){
+    return temaSeleccionado.toLowerCase().indexOf(busqueda);
+  })
+  //crearTemas(temasFiltrados);
+};*/
+  //var temasFiltro = $("#temaN").val(); // de donde se filtararn
 $(document).ready(cargarPagina);
+
+}());
