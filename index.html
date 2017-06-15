@@ -12,11 +12,10 @@
 <body>
   <!-- desarrollo de la pagina principal -->
 
-  <h1>"Foro de Temas :"</h1>
-  <button type="button" name="button">crear tema</button>
+  <h1>"Foro de Temas"</h1>
 
   <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-    + Agregar Tarea
+    Crear Tema
   </button>
 
   <!--Area de temas -->
@@ -40,7 +39,7 @@
     <div class="modal-dialog" role="document">
 
 
-      <form action="#" id="add-form"><!-- se realizara la accion del submit-->
+      <form action="#" id="formulario"><!-- se realizara la accion del submit-->
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -48,8 +47,12 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label for="nombre-tarea">Nombre tarea:</label>
-              <input type="text" class="form-control" id="tema" placeholder="Tarea">
+              <label for="nombre-tarea">Nuevo tema :</label>
+              <input type="text" class="form-control" id="temaN" placeholder="Ingresar tema nuevo">
+              <label for="nombre-tarea">Nombre Autor :</label>
+              <input type="text" class="form-control" id="autorN" placeholder="Ingresar tema nuevo">
+              <label for="nombre-tarea">Respuesta :</label>
+              <input type="text" class="form-control" id="respuestaN" placeholder="Ingresar tema nuevo">
             </div>
           </div>
           <div class="modal-footer">
