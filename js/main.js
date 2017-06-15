@@ -2,16 +2,18 @@ var api ={
   url: 'http://examen-laboratoria-sprint-5.herokuapp.com/topics/'
 };
 
-var contenedorTemas= $("#mostarTema");
+var contenedorTemas= $("#mostrarTema");
 
 var cargarPagina = function () {
   cargarTemas(); // llamamos a la funcion
-  $("formulario").submit(agregarTema);
+  $("#formulario").submit(agregarTema);
+  //$(document).on('click', '#formulario' agregarTema)
 }
 
 var cargarTemas = function (){
   $.getJSON(api.url, function(temas){
     temas.forEach(crearTemas);
+    //temas.forEach(agregarTema);
   });
 };
 
@@ -35,24 +37,20 @@ var plantillaTema = '<tr>' +
 // se mostrara atravez  de un modal para poder agregar
 var agregarTema = function (e) {
   e.preventDefault();
-  var temaN = $("#temaN").val();
-  var autorN = $("#autorN").val();
-  var respuestaN = $("#respuestaN").val();
+  var temaNuevo = $("#temaN").val();
+  var autorNuevo = $("#autorN").val();
+  //var respuestaN = $("#respuestaN").val();
   $.post(api.url, {
-    /*content: temaN,
-    author_name : autorN,
-    responses_count : respuestaN*/
-
-    "author_name": "temaN",
-        "content": "autorN",
-//        "responses_count": "0"
-
+    content: temaNuevo,
+    author_name: autorNuevo
+   //"responses_count": "0"
   }, function (tema) {
       //$("#myModal").modal("hide");
-    modal();
     crearTemas(tema);
+    modal();
   });
 };
+
 
 var modal= function(){
   $("#myModal").modal("hide");
